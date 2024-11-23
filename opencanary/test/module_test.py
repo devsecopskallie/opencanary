@@ -392,7 +392,7 @@ class TestSSHModule(unittest.TestCase):
 
     def setUp(self):
         self.connection = paramiko.SSHClient()
-        self.connection.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        self.connection.set_missing_host_key_policy(paramiko.RejectPolicy())
 
     def test_ssh_with_basic_login(self):
         """
